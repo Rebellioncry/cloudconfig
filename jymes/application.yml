@@ -21,6 +21,7 @@ ribbon:
 spring:
   rabbitmq:
     host: 10.30.2.133
+    port: 5671
   sleuth:
     sampler:
       percentage: 1
