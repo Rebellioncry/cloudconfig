@@ -1,10 +1,10 @@
 eureka:
   instance:
-    hostname: amcloud-eureka
+    hostname: 10.30.2.133
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://admin:${REGISTRY_SERVER_PASSWORD:fd2018}@amcloud-eureka:8761/eureka/
+      defaultZone: http://admin:${REGISTRY_SERVER_PASSWORD:fd2018}@10.30.2.133:8761/eureka/
 
 hystrix:
   command:
@@ -20,7 +20,7 @@ ribbon:
 
 spring:
   rabbitmq:
-    host: rabbitmq
+    host: 10.30.2.133
   sleuth:
     sampler:
       percentage: 1
@@ -30,7 +30,7 @@ spring:
       skip-pattern: "^org.*HystrixStreamTask$"
 
 authserver:
-    hostname: amcloud-authservice
+    hostname: 10.30.2.133
     port: 8767
     contextPath: /uaa
 
