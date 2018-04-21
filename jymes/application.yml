@@ -1,0 +1,40 @@
+eureka:
+  instance:
+    hostname: amcloud-eureka
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://admin:${REGISTRY_SERVER_PASSWORD:fd2018}@amcloud-eureka:8761/eureka/
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
+spring:
+  rabbitmq:
+    host: rabbitmq
+  sleuth:
+    sampler:
+      percentage: 1
+    integration:
+      enabled: false
+    scheduled:
+      skip-pattern: "^org.*HystrixStreamTask$"
+
+authserver:
+    hostname: amcloud-authservice
+    port: 8767
+    contextPath: /uaa
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/current
