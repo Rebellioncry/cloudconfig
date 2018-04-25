@@ -1,10 +1,10 @@
 eureka:
   instance:
-    hostname: 10.30.2.133
+    hostname: 192.168.1.253
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://admin:${REGISTRY_SERVER_PASSWORD:fd2018}@10.30.2.133:8761/eureka/
+      defaultZone: http://admin:${REGISTRY_SERVER_PASSWORD:fd2018}@{eureka.instance.hostname}:8761/eureka/
 
 hystrix:
   command:
@@ -20,7 +20,7 @@ ribbon:
 
 spring:
   rabbitmq:
-    host: 10.30.2.133
+    host: 192.168.1.253
     port: 5671
   sleuth:
     sampler:
@@ -31,7 +31,7 @@ spring:
       skip-pattern: "^org.*HystrixStreamTask$"
 
 authserver:
-    hostname: 10.30.2.133
+    hostname: 192.168.1.253
     port: 8767
     contextPath: /uaa
 
