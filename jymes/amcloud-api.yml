@@ -6,7 +6,7 @@ server:
 spring: 
   data: 
     mongodb: 
-      uri: mongodb://bapuser:bapuser123@10.30.2.133:27017/amcloud
+      uri: mongodb://bapuser:bapuser123@192.168.1.253:27017/amcloud
       database: amcloud
 
 #cxf
@@ -17,7 +17,7 @@ cxf:
 #ws
 ws: 
   equipservice:
-    resturl: http://10.30.2.133:8769/api/rest/service
+    resturl: http://192.168.1.253:8769/api/rest/service
   allowjumprest: true
 
 #日志过期时间设置
