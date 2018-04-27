@@ -1,0 +1,59 @@
+# Server
+server:
+  port: 8763
+ 
+#spring
+spring: 
+  data: 
+    mongodb: 
+      uri: mongodb://bapuser:bapuser123@192.168.4.121:27017/amcloud
+      database: amcloud
+  rabbitmq: 
+    publisher-confirms: true
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: AUTO   
+
+#cxf
+cxf: 
+  path: /api/soap
+
+#ws
+ws: 
+  equipservice:
+    resturl: http://amcloud-zuul:8769/api/rest/service
+  allowjumprest: false
+      
+#日志过期时间设置
+expirerule:
+  dataLogExpireDay: 2
+  errorLogExpireDay: 2
+
+#httpclient
+httpclient: 
+  config: 
+    proxy: false
+    proxyhost:
+    proxyPort: 8080
+    maxConnTotal: 1000  
+    maxPerRoute: 500  
+    connectTimeout: 60000
+    connectRequestTimeout: 20000
+    socketTimeout: 120000
+
+eureka:
+  instance:
+    metadata-map:
+      user.name: ${security.user.name}
+      user.password: ${security.user.password}
+
+security:
+  user:
+    name: user
+    password: password
+  basic: 
+    enabled: false
+management:
+  security:
+    enabled: false

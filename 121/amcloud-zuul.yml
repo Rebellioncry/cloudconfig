@@ -1,0 +1,57 @@
+server:
+  port: 8769
+
+management:
+  security:
+    enabled: false
+
+ribbon:
+  ReadTimeout: 360000
+  ConnectTimeout: 360000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+          
+zuul:
+  ribbon-isolation-strategy: thread
+  ignoredServices: '*'
+  routes:
+    amcloud-authservice:
+      path: /uaa/**
+      stripPrefix: false
+      serviceId: amcloud-authservice
+      sensitiveHeaders: 
+    amcloud-admin:
+      path: /admin/**
+      serviceId: amcloud-admin
+      sensitiveHeaders: 
+    amcloud-api: 
+      path: /api/**
+      serviceId: amcloud-api
+      sensitiveHeaders: 
+      ribbon:
+        MaxTotalConnections: 1000   # 默认值
+    amcloud-sms: 
+      path: /sms/**
+      serviceId: amcloud-sms
+      sensitiveHeaders: 
+      ribbon:
+        MaxTotalConnections: 500   # 默认值
+    amcloud-configservice: 
+      path: /config/**
+      serviceId: amcloud-configservice
+      sensitiveHeaders:
+    amcloud-swap: 
+      path: /swap/**
+      serviceId: amcloud-swap
+      sensitiveHeaders: 
+      ribbon:
+        MaxTotalConnections: 500   # 默认值
