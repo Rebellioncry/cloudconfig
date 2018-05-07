@@ -23,7 +23,7 @@ cxf:
 ws: 
   equipservice:
     resturl: http://amcloud-zuul:8769/api/rest/service
-  allowjumprest: false
+  allowjumprest: true
       
 #日志过期时间设置
 expirerule:
