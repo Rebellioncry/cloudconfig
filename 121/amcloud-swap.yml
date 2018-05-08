@@ -35,8 +35,8 @@ httpclient:
     
 #日志过期时间设置
 expirerule:
-  dataLogExpireDay: 2
-  errorLogExpireDay: 2
+  dataLogExpireDay: 90
+  errorLogExpireDay: 60
   
 #cxf
 cxf: 
