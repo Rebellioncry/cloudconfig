@@ -35,5 +35,5 @@ httpclient:
 
 #日志过期时间设置
 expirerule:
-  dataLogExpireDay: 1
-  errorLogExpireDay: 1
+  dataLogExpireDay: 90
+  errorLogExpireDay: 60
