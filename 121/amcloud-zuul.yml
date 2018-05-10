@@ -50,5 +50,3 @@ zuul:
       path: /swap/**
       serviceId: amcloud-swap
       sensitiveHeaders: 
-      ribbon:
-        MaxTotalConnections: 500   # 默认值
