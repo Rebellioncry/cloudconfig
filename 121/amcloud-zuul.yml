@@ -21,7 +21,8 @@ hystrix:
             timeoutInMilliseconds: 60000
           
 zuul:
-  ribbon-isolation-strategy: thread
+  semaphore: 
+    max-semaphores: 10000
   ignoredServices: '*'
   routes:
     amcloud-authservice:
@@ -37,14 +38,10 @@ zuul:
       path: /api/**
       serviceId: amcloud-api
       sensitiveHeaders: 
-      ribbon:
-        MaxTotalConnections: 1000   # 默认值
     amcloud-sms: 
       path: /sms/**
       serviceId: amcloud-sms
       sensitiveHeaders: 
-      ribbon:
-        MaxTotalConnections: 500   # 默认值
     amcloud-configservice: 
       path: /config/**
       serviceId: amcloud-configservice
