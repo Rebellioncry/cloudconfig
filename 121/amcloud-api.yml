@@ -37,11 +37,11 @@ httpclient:
     proxy: false
     proxyhost:
     proxyPort: 8080
-    maxConnTotal: 1000  
-    maxPerRoute: 500  
+    maxConnTotal: 2000  
+    maxPerRoute: 1000  
     connectTimeout: 60000
-    connectRequestTimeout: 20000
-    socketTimeout: 120000
+    connectRequestTimeout: 30000
+    socketTimeout: 180000
 
 eureka:
   instance:
