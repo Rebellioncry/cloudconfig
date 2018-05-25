@@ -21,6 +21,15 @@ hystrix:
             timeoutInMilliseconds: 60000
           
 zuul:
+  ratelimit:
+    enabled: true
+    behind-proxy: true
+    policies:
+      amcloud-api: 
+        limit: 20
+        refresh-interval: 1
+        type:
+        - ORIGIN
   semaphore: 
     max-semaphores: 10000
   ignoredServices: '*'
