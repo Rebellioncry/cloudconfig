@@ -30,6 +30,11 @@ zuul:
         refresh-interval: 1
         type:
         - ORIGIN
+      amcloud-admin: 
+        limit: 20
+        refresh-interval: 1
+        type:
+        - ORIGIN
   semaphore: 
     max-semaphores: 10000
   ignoredServices: '*'
