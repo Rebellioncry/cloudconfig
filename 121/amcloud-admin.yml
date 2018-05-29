@@ -27,5 +27,5 @@ spring:
       database: amcloud
       
 #文件上传地址
-prop：
-  upload-folder： /opt/cloudfiles/node-red
+prop: 
+  upload-folder: /opt/cloudfiles/node-red
