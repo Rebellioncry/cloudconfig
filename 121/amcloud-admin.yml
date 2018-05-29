@@ -28,4 +28,4 @@ spring:
       
 #文件上传地址
 prop: 
-  file-folder: E:\opt\cloudfiles\node-red
+  file-folder: /opt/cloudfiles/node-red/
