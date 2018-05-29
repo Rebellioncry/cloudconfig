@@ -25,3 +25,7 @@ spring:
     mongodb: 
       uri: mongodb://bapuser:bapuser123@mongo:27017/amcloud
       database: amcloud
+      
+#文件上传地址
+prop：
+  upload-folder： /opt/cloudfiles/node-red
