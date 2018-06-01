@@ -1,0 +1,21 @@
+server:
+  context-path: /iotauth
+  port: 8773
+
+management:
+  security:
+    enabled: false
+  context-path: /mgmt
+
+eureka:
+  instance:
+    health-check-url-path: ${server.context-path}${management.context-path}/health
+    status-page-url-path: ${server.context-path}${management.context-path}/info
+    metadata-map:
+      management.context-path: ${server.context-path}${management.context-path}
+      
+spring:
+  data: 
+    mongodb: 
+      uri: mongodb://bapuser:bapuser123@mongo:27017/amcloud
+      database: amcloud

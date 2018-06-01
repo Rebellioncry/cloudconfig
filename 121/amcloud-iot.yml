@@ -1,5 +1,5 @@
 server:
-  port: 8768
+  port: 8772
   
 msg: Hello
 
@@ -15,20 +15,13 @@ security:
     password: password
   oauth2:
     client:
-      clientId: amcloud-admin
+      clientId: amcloud-iot
       clientSecret: ${security.user.password}
-      accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
+      accessTokenUri: http://${iotauthserver.hostname}:${iotauthserver.port}${iotauthserver.contextPath}/oauth/token
       grant-type: client_credentials
       scope: server
-         
 spring:  
   data: 
     mongodb: 
       uri: mongodb://bapuser:bapuser123@mongo:27017/amcloud
       database: amcloud
-      
-#文件上传地址
-prop: 
-  upload-path: /opt/upload/ 
-      
-

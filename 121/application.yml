@@ -33,6 +33,11 @@ authserver:
     hostname: amcloud-authservice
     port: 8767
     contextPath: /uaa
+    
+iotauthserver:
+    hostname: amcloud-iotauthservice
+    port: 8773
+    contextPath: /iotauth
 
 security:
   oauth2:

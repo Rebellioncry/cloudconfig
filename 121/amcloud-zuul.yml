@@ -66,3 +66,12 @@ zuul:
       path: /swap/**
       serviceId: amcloud-swap
       sensitiveHeaders: 
+    amcloud-iot: 
+      path: /iot/**
+      serviceId: amcloud-iot
+      sensitiveHeaders: 
+    amcloud-iotauthservice: 
+      path: /iotauth/**
+      stripPrefix: false
+      serviceId: amcloud-iotauthservice
+      sensitiveHeaders: 
