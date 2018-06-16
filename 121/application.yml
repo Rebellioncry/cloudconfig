@@ -1,11 +1,3 @@
-eureka:
-  instance:
-    hostname: amcloud-eureka
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://admin:${REGISTRY_SERVER_PASSWORD:fd2018}@${eureka.instance.hostname}:8761/eureka/
-
 hystrix:
   command:
     default:

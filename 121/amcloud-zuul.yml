@@ -15,8 +15,12 @@ ribbon:
 
 
 hystrix:
-  command:
+  threadpool:
     default:
+      coreSize: 50
+      maximumSize: 10000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
       execution:
         isolation:
           thread:
@@ -24,21 +28,22 @@ hystrix:
           
 zuul:
   ratelimit:
-    enabled: true
-    behind-proxy: true
+    enabled: false
+    behind-proxy: false
     policies:
       amcloud-api: 
-        limit: 20
+        limit: 50
         refresh-interval: 1
         type:
         - ORIGIN
       amcloud-admin: 
-        limit: 20
+        limit: 50
         refresh-interval: 1
         type:
         - ORIGIN
-  semaphore: 
-    max-semaphores: 10000
+  ribbon-isolation-strategy: THREAD
+  thread-pool:
+    use-separate-thread-pools: true
   ignoredServices: '*'
   routes:
     amcloud-authservice:

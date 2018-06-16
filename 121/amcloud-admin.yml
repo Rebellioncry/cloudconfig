@@ -29,6 +29,6 @@ spring:
       
 #文件上传地址
 prop: 
-  upload-path: /opt/upload/ 
+  upload-path: /opt/amcloud/cloudfiles/NodeRedModules/ 
       
 
